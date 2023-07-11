@@ -1,2 +1,9 @@
 # java-fundamentals
-Java fundamentals lab work
+
+## Files Contained
+
+### Basics
+
+- Pluralize function
+- Coin Flipper
+- Terminal Clock
