@@ -1,7 +1,9 @@
 # java-fundamentals
 
-## Java fundamentals labs
+## Files Contained
 
-### Files Contained
+### Basics
 
-basics
+- Pluralize function
+- Coin Flipper
+- Terminal Clock
