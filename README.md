@@ -1,2 +1,7 @@
 # java-fundamentals
-Java fundamentals lab work
+
+## Java fundamentals labs
+
+### Files Contained
+
+basics
