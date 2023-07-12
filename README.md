@@ -3,7 +3,8 @@
 ## Files Contained
 
 + README.md
-+ Main.java
++ basics
++ basiclibrary
 
 ### Lab 01 - Basics
 
