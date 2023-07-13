@@ -3,7 +3,7 @@
  */
 package basiclibrary;
 
-import java.util.Random;
+import java.util.*;
 
 public class Library {
 
@@ -54,6 +54,58 @@ public class Library {
     }
     return arrays[minIndex];
   }
-}
 
+
+  public String analyzeTemps(int[][] weeklyMonthTemperatures) {
+    int lowTemp = Integer.MAX_VALUE;
+    int highTemp = Integer.MIN_VALUE;
+    HashSet<Integer> uniqueTemps = new HashSet<>();
+// Found out from a YouTube video what an enhanced for loop is... I understand this better.
+    for (int[] week : weeklyMonthTemperatures) {
+      for (int dlyTemp : week) {
+        if (dlyTemp < lowTemp) {
+          lowTemp = dlyTemp;
+        }
+        if (dlyTemp > highTemp) {
+          highTemp = dlyTemp;
+        }
+        uniqueTemps.add(dlyTemp);
+      }
+    }
+
+    StringBuilder output = new StringBuilder();
+    output.append("High: ").append(highTemp).append("\n");
+    output.append("Low: ").append(lowTemp).append("\n");
+
+    for (int i = lowTemp; i <= highTemp; i++) {
+      if (!uniqueTemps.contains(i)) {
+        output.append("Never saw temperature: ").append(i).append("\n");
+      }
+    }
+    return output.toString();
+  }
+
+  public String tally(List<String> votes) {
+    HashMap<String, Integer> voteTally = new HashMap<>();
+
+    for (String voteItem : votes) {
+      if (voteTally.containsKey(voteItem)) {
+        voteTally.put(voteItem, voteTally.get(voteItem) + 1);
+      } else {
+        voteTally.put(voteItem, 1);
+      }
+    }
+
+    String winner = "";
+    int totalVotes = 0;
+    for (Map.Entry<String, Integer> entry : voteTally.entrySet()) {
+      if (entry.getValue() > totalVotes) {
+        winner = entry.getKey();
+        totalVotes = entry.getValue();
+      }
+    }
+    System.out.println(winner + " received the most votes!");
+    return winner;
+  }
+}
 
