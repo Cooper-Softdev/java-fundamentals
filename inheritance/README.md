@@ -28,5 +28,5 @@ Review review = new Review("Sonic", 4, "$$$", "Great food!", "Alice");
 restaurant.addReview(review);
 
 restaurantManager.printReviews("Sonic");
-/// Printing reviews may be broken actually. I gave up on that
+
 ```
