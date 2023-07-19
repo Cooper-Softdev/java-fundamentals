@@ -1,14 +1,14 @@
 package inheritance;
 
-public class Restaurant extends Business {
+public class Shop extends Business {
 
-  public Restaurant(String name, double stars, String priceCategory) {
+  public Shop(String name, double stars, String priceCategory) {
     super(name, stars, priceCategory);
   }
 
   @Override
   public String toString() {
-    return "Restaurant{" +
+    return "Shop{" +
       "name='" + name + '\'' +
       ", stars=" + stars +
       ", priceCategory='" + priceCategory + '\'' +
@@ -16,5 +16,3 @@ public class Restaurant extends Business {
       '}';
   }
 }
-
-
