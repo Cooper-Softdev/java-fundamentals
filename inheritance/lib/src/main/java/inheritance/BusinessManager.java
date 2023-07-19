@@ -10,7 +10,7 @@ public class BusinessManager {
   }
 
   public void addReview(Review review) {
-    String businessName = review.getBusiness().getName().toLowerCase(); // Use the getBusiness method to get the Business object and then get its name
+    String businessName = review.getBusiness().getName().toLowerCase();
     if (this.businesses.containsKey(businessName)) {
       this.businesses.get(businessName).addReview(review);
     } else {
