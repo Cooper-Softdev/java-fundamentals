@@ -67,15 +67,4 @@ public class RestaurantTests {
     assertEquals("$$$", restaurant.priceCategory);
   }
 
-//  @Test
-//  void testRestaurantManagerAddReview() {
-//    RestaurantManager restaurantManager = new RestaurantManager();
-//    Review review = new Review("Sonic", 4, "$$", "Great food!", "Alice");
-//    restaurantManager.addReview(review);
-//    Restaurant restaurant = restaurantManager.getRestaurant("Sonic");
-//    assertNotNull(restaurant);
-//    assertEquals(1, restaurant.reviews.size());
-//    assertEquals(review, restaurant.reviews.get(0));
-//  }
-
 }
