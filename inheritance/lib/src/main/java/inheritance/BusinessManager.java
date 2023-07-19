@@ -15,10 +15,18 @@ public class BusinessManager {
       this.businesses.get(businessName).addReview(review);
     } else {
       Business newBusiness;
-      if (review.movie.isPresent()) {
-        newBusiness = new Theater(businessName, review.stars, review.priceCategory);
-      } else {
-        newBusiness = new Restaurant(businessName, review.stars, review.priceCategory);
+      switch(review.getBusinessType()) {
+        case RESTAURANT:
+          newBusiness = new Restaurant(businessName, review.stars, review.priceCategory);
+          break;
+        case SHOP:
+          newBusiness = new Shop(businessName, review.stars, review.priceCategory);
+          break;
+        case THEATER:
+          newBusiness = new Theater(businessName, review.stars, review.priceCategory);
+          break;
+        default:
+          throw new IllegalArgumentException("Unsupported business type.");
       }
       review.setBusiness(newBusiness);
       newBusiness.addReview(review);

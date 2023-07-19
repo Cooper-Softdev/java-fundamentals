@@ -10,15 +10,17 @@ public class Review {
   public String businessName;
   public Optional<String> movie;
   private Business business;
+  private BusinessType businessType;
 
-  public Review(Business business, double stars, String priceCategory, String body, String author, Optional<String> movie) {
+  public Review(Business business, double stars, String priceCategory, String body, String author, Optional<String> movie, BusinessType businessType) {
     if (stars < 1 || stars > 5) {
       throw new IllegalArgumentException("Stars must be an integer between 1 and 5 inclusive.");
     }
-    if (!priceCategory.matches("\\$+")) {
+    if (!priceCategory.matches("\\${1,5}")) {
       throw new IllegalArgumentException("Price category must be between $ and $$$$$ inclusive.");
     }
     this.business = business;
+    this.businessType = businessType;
     this.businessName = business.getName();
     this.stars = stars;
     this.priceCategory = priceCategory;
@@ -27,6 +29,15 @@ public class Review {
     this.movie = movie;
   }
 
+  public enum BusinessType {
+    RESTAURANT,
+    SHOP,
+    THEATER,
+  }
+
+  public BusinessType getBusinessType() {
+    return this.businessType;
+  }
   public Business getBusiness() {
     return this.business;
   }
